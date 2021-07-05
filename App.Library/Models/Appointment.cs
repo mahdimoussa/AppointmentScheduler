@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
@@ -7,6 +8,7 @@ namespace App.Library.Models
 {
     public class Appointment
     {
+        [Key]
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
@@ -16,9 +18,9 @@ namespace App.Library.Models
         public DateTime Date { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        public DateTime Duration { get; set; }
+        public int Duration { get; set; }
         public bool IsDeleted { get; set; }
-        public bool Status { get; set; }
+        public string Status { get; set; }
 
         [ForeignKey("Status")]
         public virtual Lookup Lookups { get; set; }

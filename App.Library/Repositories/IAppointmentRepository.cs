@@ -8,10 +8,8 @@ namespace App.Library.Repositories
 {
     public interface IAppointmentRepository
     {
-        Task<Tuple<bool, List<Appointment>>> GetAll();
+        Task<Tuple<bool, List<Appointment>>> GetAllAppointments();
         Task<Tuple<bool>> SaveAppointment(Appointment appointment);
         Task<Tuple<bool, bool>> DeleteAppointment(int Id);
-
-
     }
 }
